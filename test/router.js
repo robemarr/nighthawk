@@ -93,6 +93,31 @@ describe('Router', function () {
 		});
 	});
 
+	it('should not intercept submits when the form action does not start with the base url', function () {
+		router._processRequest = function () {
+			throw new Error('Should not have been called!!');
+		};
+		router.base('/base');
+
+		evt.target = document.createElement('form');
+		evt.target.setAttribute('action', '/foo');
+
+		router.onSubmit(evt, evt.target);
+	});
+
+	it('should intercept submits', function (done) {
+		router.get('/foo', function (req, res) {
+			done();
+		});
+
+		evt.target = document.createElement('form');
+		evt.target.setAttribute('action', '/foo');
+
+		assert.doesNotThrow(function () {
+			router.onSubmit(evt, evt.target);
+		});
+	});
+
 	it('should call process request with the right link parts', function () {
 		router._processRequest = function (url) {
 			assert.equal(url.pathname, '/foo', 'Incorrect pathname');
