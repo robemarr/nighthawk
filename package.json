@@ -1,6 +1,6 @@
 {
-  "name": "nighthawk",
-  "version": "2.2.0",
+  "name": "@robmarr/nighthawk",
+  "version": "0.1.0",
   "description": "A client-side wrapper for the Express router",
   "main": "index.js",
   "keywords": [
@@ -27,13 +27,14 @@
   "author": "Wes Todd",
   "license": "ISC",
   "dependencies": {
+    "@robmarr/intercept-form-submits": "^0.1.1",
     "inherits": "^2.0.3",
     "intercept-link-clicks": "^1.0.2",
     "router": "^1.1.4"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/wesleytodd/nighthawk.git"
+    "url": "git://github.com/robemarr/nighthawk.git"
   },
   "devDependencies": {
     "browserify": "^14.4.0",
