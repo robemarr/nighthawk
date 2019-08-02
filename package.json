@@ -21,13 +21,13 @@
     "example-basic": "cd example/basic && npm install && npm run browserify && npm run start",
     "example-basedir": "cd example/base-dir && npm install && npm run browserify && npm run start",
     "example-redirect": "cd example/redirect && npm install && npm run browserify && npm run start",
-    "prepublish": "npm run build && npm t",
+    "prepublishOnly": "npm run build && npm t",
     "postpublish": "git push && git push --tags"
   },
   "author": "Wes Todd",
   "license": "ISC",
   "dependencies": {
-    "@robmarr/intercept-form-submits": "^0.1.1",
+    "@robmarr/intercept-form-submits": "^0.2.0",
     "inherits": "^2.0.3",
     "intercept-link-clicks": "^1.0.2",
     "router": "^1.1.4"
