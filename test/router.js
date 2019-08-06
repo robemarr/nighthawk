@@ -63,7 +63,7 @@ describe('Router', function () {
 	});
 
 	it('should not intercept clicks when the link does not start with the base url', function () {
-		router._processRequest = function () {
+		router._processGetRequest = function () {
 			throw new Error('Should not have been called!!');
 		};
 		router.base('/base');
@@ -94,7 +94,7 @@ describe('Router', function () {
 	});
 
 	it('should not intercept submits when the form action does not start with the base url', function () {
-		router._processRequest = function () {
+		router._processGetRequest = function () {
 			throw new Error('Should not have been called!!');
 		};
 		router.base('/base');
@@ -119,7 +119,7 @@ describe('Router', function () {
 	});
 
 	it('should call process request with the right link parts', function () {
-		router._processRequest = function (url) {
+		router._processGetRequest = function (url) {
 			assert.equal(url.pathname, '/foo', 'Incorrect pathname');
 			assert.equal(url.search, '?bar=bar', 'Incorrect search');
 			assert.equal(url.hash, '#baz', 'Incorrect hash');
@@ -138,7 +138,7 @@ describe('Router', function () {
 	});
 
 	it('should change the route', function () {
-		router._processRequest = function (url) {
+		router._processGetRequest = function (url) {
 			assert.equal(url.pathname, '/foo', 'Incorrect pathname');
 			assert.equal(url.search, '?bar=bar', 'Incorrect search');
 			assert.equal(url.hash, '#baz', 'Incorrect hash');
