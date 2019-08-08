@@ -1,6 +1,6 @@
 {
   "name": "@robmarr/nighthawk",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A client-side wrapper for the Express router",
   "main": "index.js",
   "keywords": [
