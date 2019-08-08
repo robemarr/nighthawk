@@ -106,7 +106,7 @@ describe('Router', function () {
 	});
 
 	it('should intercept submits', function (done) {
-		router.get('/foo', function (req, res) {
+		router.post('/foo', function (req, res) {
 			done();
 		});
 
